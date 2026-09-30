@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eazyleng"
+version = "0.1.0"
+description = "Traduce testi italiani nelle lingue dell'applicazione e li prepara per il salvataggio nel database."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+claude = ["anthropic>=1.9"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+eazyleng = "eazyleng.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
